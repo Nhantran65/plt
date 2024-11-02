@@ -22,3 +22,8 @@ class TestPigLatin(unittest.TestCase):
         translator = PigLatin(phrase=phrase)
         self.assertEqual(expected_translation, translator.convert())
 
+    def test_get_initial_phrase(self):
+        phrase = "hello world"
+        translator = PigLatin(phrase=phrase)
+        self.assertEqual(phrase, translator.retrieve_phrase())
+
