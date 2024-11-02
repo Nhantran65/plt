@@ -22,8 +22,16 @@ class TestPigLatin(unittest.TestCase):
         translator = PigLatin(phrase=phrase)
         self.assertEqual(expected_translation, translator.convert())
 
-    def test_get_initial_phrase(self):
-        phrase = "hello world"
+
+    def test_translate_word_with_vowel_end(self):
+        phrase = "apple"
+        expected_translation = "appleyay"
         translator = PigLatin(phrase=phrase)
-        self.assertEqual(phrase, translator.retrieve_phrase())
+        self.assertEqual(expected_translation, translator.convert())
+
+    def test_translate_word_with_consonant_end(self):
+        phrase = "ask"
+        expected_translation = "askay"
+        translator = PigLatin(phrase=phrase)
+        self.assertEqual(expected_translation, translator.convert())
 
