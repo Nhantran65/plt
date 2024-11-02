@@ -53,3 +53,9 @@ class TestPigLatin(unittest.TestCase):
         translator = PigLatin(phrase=phrase)
         self.assertEqual(expected_translation, translator.convert())
 
+    def test_translate_hyphenated_words(self):
+        phrase = "well-being"
+        expected_translation = "ellway-eingbay"
+        translator = PigLatin(phrase=phrase)
+        self.assertEqual(expected_translation, translator.convert())
+
